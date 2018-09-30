@@ -16,12 +16,10 @@ app.use(methodOverride("_method"));
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine","ejs");
 
-//login and signup module
-app.use(express.static("public"));
 
 //auth requirements
 app.use(require("express-session")({
-   secret:"password",
+   secret:"picmoraapp",
    resave:false,
    saveUninitialized:false
 }));
@@ -37,17 +35,40 @@ app.use(function(req,res,next){
   next();
 })
 
+//routes
 
-var parsedData={};
-
-//home
 app.get("/",function(req,res){
-    res.render("home");
+    res.render("index");
 });
 
-app.get("/main",isLoggedIn,function(req,res){
-    res.render("landing");
+app.get("/about",function(req,res){
+    res.render("about");
 });
+
+app.get("/cars",function(req,res){
+    res.render("cars");
+});
+
+app.get("/service",function(req,res){
+    res.render("service");
+});
+
+app.get("/team",function(req,res){
+    res.render("team");
+});
+
+app.get("/blog-home",function(req,res){
+    res.render("bloghome");
+});
+
+app.get("/blog-single",function(req,res){
+    res.render("blogsingle");
+});
+
+app.get("/elements",function(req,res){
+    res.render("elements");
+});
+
 
 //auth
 app.get("/login",function(req,res){
