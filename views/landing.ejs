@@ -1,0 +1,13 @@
+<%include partials/header.ejs%>
+
+<div class="row">
+            <div class="column padding-reset">
+                <div class="ui huge message page grid">
+                    <h1 class="ui huge header">Hello <%= currentUser.username %></h1>
+                    <p>This is the main page of the website.</p>
+                    <a class="ui blue button" href="/logout">Logout »</a>
+                </div>
+            </div>
+        </div>
+
+<%include partials/footer.ejs%>
