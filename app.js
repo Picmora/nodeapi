@@ -12,13 +12,13 @@ const flash = require("express-flash-messages");
 app.use(flash());
 var app=express();
 
-mongoose.connect("mongodb://admin:admin83@ds159812.mlab.com:59812/loginegapp");
+mongoose.connect("mongodb://admin:admin83@ds241530.mlab.com:41530/picmorav1");
 
 app.use(methodOverride("_method"));
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine","ejs");
 
-
+//-----------------------------------------------------------------------------------------------------------//
 //auth requirements
 app.use(require("express-session")({
    resave:false,
@@ -54,6 +54,8 @@ app.use(function(req,res,next){
   res.locals.currentUser = req.user;
   next();
 })
+
+
 
 //--------------------------------------------------//
 //auth
