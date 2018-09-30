@@ -18,12 +18,6 @@ app.set("view engine","ejs");
 
 //login and signup module
 app.use(express.static("public"));
-app.use(express.static("views/loginmod"));
-app.use(express.static("views/loginmod/css"));
-app.use(express.static("views/loginmod/fonts"));
-app.use(express.static("views/loginmod/images"));
-app.use(express.static("views/loginmod/js"));
-app.use(express.static("views/loginmod/vendor"));
 
 //auth requirements
 app.use(require("express-session")({
